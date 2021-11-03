@@ -100,6 +100,9 @@ pipeline {
             steps {
                 ansiblePlaybook(
                     extraVars: [
+                        terraform_backend_bucket: '${terraform_backend_bucket}',
+                        terraform_backend_key: '${terraform_backend_key}',
+                        terraform_backend_region: '${terraform_backend_region}',
                         terraform_plan_file: '${resolved_terraform_plan_file}',
                         terraform_state: 'present'
                     ],
