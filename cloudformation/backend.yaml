@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >
+  Backend resources for example usage of Jenkins, Ansible, and Terraform to
+  manage infrastructure resources.
+
+Parameters:
+  S3BucketName:
+    Default: michaelxmcbride-jenkins-ansible-terraform-example-backend
+    Description: The name of the Amazon S3 bucket for Terraform state storage.
+    Type: String
+
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    Properties:
+      BucketName:
+        Ref: S3BucketName
+      VersioningConfiguration:
+        Status: Enabled

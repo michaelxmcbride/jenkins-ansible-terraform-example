@@ -1,0 +1,9 @@
+---
+aws_region: us-east-2
+s3_bucket_name: michaelxmcbride-jenkins-ansible-terraform-example
+terraform_backend_bucket: michaelxmcbride-jenkins-ansible-terraform-example-backend
+terraform_backend_key: terraform.tfstate
+terraform_backend_region: us-east-2
+terraform_plan_file: null
+terraform_project_path: "{{ playbook_dir }}/../terraform"
+terraform_state: present

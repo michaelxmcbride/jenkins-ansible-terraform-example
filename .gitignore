@@ -1,0 +1,38 @@
+# Ignore directory for local files and directories.
+/.local/
+
+# Ignore Terraform data directories.
+**/.terraform/*
+
+# Ignore Terraform state files.
+*.tfstate
+*.tfstate.*
+
+# Ignore Terraform crash log files.
+crash.log
+
+# Ignore Terraform variables files, which are likely to contain sentitive data,
+# such as passwords, private keys, and other secrets. These should not be part
+# of version control, as they are data points which are potentially sensitive
+# and subject to change depending on the environment.
+*.tfvars
+
+# Ignore Terraform override files, as they are usually used to override
+# resources locally and so are not checked in.
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Include any Terraform override files you do wish to add to version control
+# using negated pattern.
+#
+# !example_override.tf
+
+# Include Terraform plan files to ignore the plan output of command:
+# terraform plan -out=tfplan
+# Example: *tfplan*
+
+# Ignore Terraform CLI configuration files.
+.terraformrc
+terraform.rc

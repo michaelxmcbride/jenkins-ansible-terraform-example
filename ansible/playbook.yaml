@@ -1,0 +1,23 @@
+---
+- hosts: all
+  gather_facts: true
+  tasks:
+  - name: Invoke Terraform
+    terraform:
+      backend_config:
+        bucket: "{{ terraform_backend_bucket }}"
+        key: "{{ terraform_backend_key }}"
+        region: "{{ terraform_backend_region }}"
+      force_init: yes
+      lock: true
+      plan_file: "{{ terraform_plan_file }}"
+      project_path: "{{ terraform_project_path }}"
+      state: "{{ terraform_state }}"
+      variables:
+        aws_region: "{{ aws_region }}"
+        s3_bucket_name: "{{ s3_bucket_name }}"
+    register: terraform_response
+
+  - name: Display Terraform Response
+    debug:
+      var: terraform_response

@@ -1,0 +1,36 @@
+#
+# Settings file for EditorConfig (https://editorconfig.org).
+#
+
+# Indicate this is the top-most EditorConfig settings file.
+root = true
+
+# Default settings for all file types.
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+max_line_length = 80
+trim_trailing_whitespace = true
+
+# Settings for Go source files.
+[*.go]
+indent_style = tab
+
+# Settings for batch files.
+[*.{bat,cmd}]
+end_of_line = crlf
+
+# Settings for Terraform configuration files.
+[*.tf]
+indent_size = 2
+
+# Settings for YAML files.
+[*.{yaml,yml}]
+indent_size = 2
+
+# Settings for makefiles.
+[[Mm]akefile]
+indent_style = tab
